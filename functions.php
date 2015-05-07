@@ -13,6 +13,10 @@ function changeRank($rank) {
 
 }
 
+function populateDB() {
+  
+}
+
 function userExists($username) {
   $db = new PDO('sqlite:database.sqlite');
   $data = array($username);
