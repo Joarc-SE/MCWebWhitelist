@@ -9,7 +9,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="fluid-container">
+      <div class="col-md-offset-3 col-md-6">
+        <h1>Hello World</h1>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
