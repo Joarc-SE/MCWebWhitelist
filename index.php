@@ -16,7 +16,7 @@
           <h1>Whitelist Manager - <?= $_SERVER['SERVER_NAME'] ?></h1>
         </div>
         <div class="col-md-offset-2 col-md-8">
-          <h2>Please login to continue</h2>
+          <h2 id="login-form-text">Please login to continue</h2>
           <form method="post" action="/login.php">
             <input type="hidden" name="action" value="login">
             <div class="login-form">
