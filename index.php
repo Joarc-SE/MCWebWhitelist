@@ -11,25 +11,21 @@
   </head>
   <body>
     <div class="fluid-container">
-      <div class="col-md-offset-3 col-md-6">
+      <div class="col-md-offset-4 col-md-4">
         <div class="page-header">
           <h1>Whitelist Manager - <?= $_SERVER['SERVER_NAME'] ?></h1>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="col-md-offset-3 col-md-6">
-              <h2>Please login to continue</h2>
-              <form method="post" action="/login.php">
-                <input type="hidden" name="action" value="login">
-                <div class="login-form">
-                  <label for="username">Username and Password: </label>
-                  <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-                  <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                  <button type="submit" class="btn btn-primary btn-block" id="loginButton">Login</button>
-                </div>
-              </form>
+        <div class="col-md-offset-3 col-md-6">
+          <h2>Please login to continue</h2>
+          <form method="post" action="/login.php">
+            <input type="hidden" name="action" value="login">
+            <div class="login-form">
+              <label for="username">Username and Password: </label>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+              <button type="submit" class="btn btn-primary btn-block" id="loginButton">Login</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
