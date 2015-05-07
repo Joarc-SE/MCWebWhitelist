@@ -15,7 +15,7 @@ body {
 .login-form > input {
   border-bottom-color:0;
 }
-.login-form-text {
+#login-form-text {
   margin-top: 50px;
   margin-bottom: 20px;
 }
