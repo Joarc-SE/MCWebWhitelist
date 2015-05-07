@@ -1,4 +1,19 @@
 <?php if ($_SERVER['REQUEST_URI'] != "/") header('Location: /'); ?>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  if (isset($_POST['action'])) {
+    if ($_POST['action'] == "login") {
+      if (isset($_POST['username']) && isset($_POST['password'])) {
+        if (userExists($_POST['username'])) {
+          echo "true";
+        } else {
+          echo "false";
+        }
+      }
+    }
+  }
+}
+?>
 <div class="col-md-offset-4 col-md-4">
   <div class="page-header text-center">
     <h1>Whitelist Manager - <?= $_SERVER['SERVER_NAME'] ?></h1>
@@ -13,7 +28,7 @@
   <?php endif; ?>
   <div class="col-md-offset-2 col-md-8">
     <h2 id="login-form-text">Please login to continue</h2>
-    <form method="post">
+    <form method="post" autocomplete="off">
       <input type="hidden" name="action" value="login">
       <div class="login-form">
         <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username" required autofocus>
