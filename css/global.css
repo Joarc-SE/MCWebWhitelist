@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color:#eee;
 }
 .login-form > #username {
   border-bottom-left-radius:0;
@@ -13,5 +13,5 @@ body {
     border-top-right-radius:0;
 }
 .login-form > input {
-  border-bottom-color: none;
+  border-bottom-color:0;
 }

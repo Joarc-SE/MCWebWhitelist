@@ -20,7 +20,6 @@
           <form method="post" action="/login.php">
             <input type="hidden" name="action" value="login">
             <div class="login-form">
-              <label for="username">Username and Password: </label>
               <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username" required autofocus>
               <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
               <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginButton">Login</button>
