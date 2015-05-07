@@ -1,0 +1,14 @@
+body {
+  background-color: #eee;
+}
+.login-form > #username {
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+}
+.login-form > #password {
+  border-radius:0;
+}
+.login-form > #loginButton {
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}

@@ -7,11 +7,28 @@
     <meta name="author" content="Joarc and Gustavwiz">
     <title>Begining work of this project!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
   </head>
   <body>
     <div class="fluid-container">
       <div class="col-md-offset-3 col-md-6">
-        <h1>Hello World</h1>
+        <div class="page-header">
+          <h1>Whitelist Manager - <?= $_SERVER['SERVER_ADDRESS'] ?></h1>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h2>Please login to continue</h2>
+            <form method="post" action="/login.php">
+              <input type="hidden" name="action" value="login">
+              <div class="login-form">
+                <label for="username">Username and Password: </label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary btn-block" id="loginButton">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/jquery.min.js"></script>
