@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,22 +14,11 @@
   </head>
   <body>
     <div class="fluid-container">
-      <div class="col-md-offset-4 col-md-4">
-        <div class="page-header">
-          <h1>Whitelist Manager - <?= $_SERVER['SERVER_NAME'] ?></h1>
-        </div>
-        <div class="col-md-offset-2 col-md-8">
-          <h2 id="login-form-text">Please login to continue</h2>
-          <form method="post" action="/login.php">
-            <input type="hidden" name="action" value="login">
-            <div class="login-form">
-              <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username" required autofocus>
-              <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
-              <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginButton">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <?php if ($_SESSION['logged_in']) { ?>
+        <?php include("index.main.php"); ?>
+      <?php } else { ?>
+        <?php include("index.login.php"); ?>
+      <?php } ?>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
