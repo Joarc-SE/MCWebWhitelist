@@ -13,7 +13,7 @@ body {
     border-top-right-radius:0;
 }
 .login-form > input {
-  border-bottom-color:0;
+  border-bottom-color:transparent;
 }
 #login-form-text {
   margin-top: 50px;
