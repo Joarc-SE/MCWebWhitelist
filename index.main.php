@@ -56,3 +56,21 @@
     </div>
   </div>
 </div>
+<script>
+$('#profile a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#whitelist a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#users a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#settings a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
