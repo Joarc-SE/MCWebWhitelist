@@ -14,7 +14,7 @@ function changeRank($rank) {
 }
 
 function populateDB() {
-  
+
 }
 
 function userExists($username) {
