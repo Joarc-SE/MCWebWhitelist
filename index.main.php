@@ -1,6 +1,6 @@
 <div class="col-md-4 col-md-offset-4">
-  <div class="page-header">
-    <h1>Whitelist <small>whitelist</small></h1>
+  <div class="page-header text-center">
+    <h1>Whitelist Manager - <?= $_SERVER['SERVER_NAME'] ?></h1>
   </div>
   <div role="tabpanel">
 
@@ -15,7 +15,34 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="profile">
-        <p>Profile</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Username</td>
+              <td>Added By</td>
+              <td>When</td>
+            </tr>
+          </thead>
+          <tbody>
+              <?php
+                $db = new PDO("sqlite:database.sqlite");
+                $query = $db->prepare("SELECT * FROM whitelist");
+                $query->execute();
+                $data = $query->fetchAll();
+                foreach ($data as $key => $value) {
+              ?>
+              <tr>
+                <td><?= $value[0] ?></td>
+                <td><?= $value[1] ?></td>
+                <td><?= $value[2] ?></td>
+                <td><?= $value[3] ?></td>
+              </tr>
+              <?php
+                }
+              ?>
+          </tbody>
+        </table>
       </div>
       <div role="tabpanel" class="tab-pane" id="whitelist">
         <p>Whitelist</p>
