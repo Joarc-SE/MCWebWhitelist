@@ -1,4 +1,4 @@
-<?php if ($_SERVER['REQUEST_URI'] != "/") header('Location: /'); ?>
+<?php /*if ($_SERVER['REQUEST_URI'] != "/") header('Location: /');*/ ?>
 <?php
 
 function addUser($username, $password, $rank) {
