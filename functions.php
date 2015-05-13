@@ -54,3 +54,12 @@ function checkPassword($username, $password) {
     return false;
   }
 }
+
+function getRank($username) {
+  $db = new PDO('sqlite:database.sqlite');
+  $data = array($username);
+  $query = $db->prepare('SELECT * FROM users WHERE username = ?');
+  $query->execute($data);
+  $result = $query->fetch();
+  return $result['rank'];
+}

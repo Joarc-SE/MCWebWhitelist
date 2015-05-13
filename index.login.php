@@ -7,7 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (userExists($_POST['username'])) {
           if (checkPassword($_POST['username'], $_POST['password'])) {
             $_SESSION['logged_in'] = true;
-            //header('Location: /');
+            $_SESSION['user_rank'] = getRank($_POST['username']);
+            header('Location: /');
             echo "user password true";
           } else {
             echo "password false";
