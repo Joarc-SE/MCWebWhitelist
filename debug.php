@@ -1,5 +1,5 @@
 <?php
-$db = new DBO("sqlite:database.sqlite");
+$db = new PDO("sqlite:database.sqlite");
 $result = $db->prepare('SELECT * FROM users');
 $result->query();
 $result = $result->fetchAll();
