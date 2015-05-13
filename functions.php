@@ -42,7 +42,7 @@ function userExists($username) {
 
 function checkPassword($username, $password) {
   $db = new PDO('sqlite:database.sqlite');
-  $data = array($username)
+  $data = array($username);
   $query = $db->prepare('SELECT * FROM users WHERE username = ?');
   $query->execute($data);
   $result = $query->fetch();
