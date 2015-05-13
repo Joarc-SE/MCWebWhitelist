@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           if (checkPassword($_POST['username'], $_POST['password'])) {
             $_SESSION['logged_in'] = true;
             //header('Location: /');
+            echo "user password true";
           } else {
             echo "password false";
           }
