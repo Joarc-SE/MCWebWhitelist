@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['action'] == "login") {
       if (isset($_POST['username']) && isset($_POST['password'])) {
         if (userExists($_POST['username'])) {
-          if (checkPassword($_POST['password'])) {
+          if (checkPassword($_POST['username'], $_POST['password'])) {
             $_SESSION['logged_in'] = true;
             //header('Location: /');
           } else {

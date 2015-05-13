@@ -40,10 +40,11 @@ function userExists($username) {
   }
 }
 
-function checkPassword($password) {
+function checkPassword($username, $password) {
   $db = new PDO('sqlite:database.sqlite');
+  $data = array($username)
   $query = $db->prepare('SELECT * FROM users WHERE username = ?');
-  $query->execute();
+  $query->execute($data);
   $result = $query->fetch();
   if (password_verify($password, $result['password'])) {
     return true;
