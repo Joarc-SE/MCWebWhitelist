@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['action'] == "login") {
       if (isset($_POST['username']) && isset($_POST['password'])) {
         if (userExists($_POST['username'])) {
-          echo "true";
+          echo "user true";
         } else {
-          echo "false";
+          echo "user false";
         }
       }
     }
