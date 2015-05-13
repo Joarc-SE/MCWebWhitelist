@@ -2,7 +2,10 @@
 <?php
 
 function addUser($username, $password, $rank) {
-
+  $db = new PDO('sqlite:database.sqlite');
+  $data = array($username, $password, $rank);
+  $response = $db->prepare('INSERT INTO users (username, password, rank) VALUES (?, ?, ?)');
+  $response->query($data);
 }
 
 function delUser($username) {
@@ -26,10 +29,22 @@ function populateDB() {
 function userExists($username) {
   $db = new PDO('sqlite:database.sqlite');
   $data = array($username);
-  $response = $db->prepare('SELECT * FROM Users WHERE username = ?');
+  $response = $db->prepare('SELECT * FROM users WHERE username = ?');
   $response->execute($data);
   $result = $response->fetch();
   if ($result["username"] != null && $result["username"] == $username) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkPassword($password) {
+  $db = new PDO('sqlite:database.sqlite');
+  $query = $db->prepare('SELECT * FROM users WHERE username = ?');
+  $query->execute();
+  $result = $query->fetch();
+  if (password_verify($result['password'], $password)) {
     return true;
   } else {
     return false;
