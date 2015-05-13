@@ -17,7 +17,7 @@ function changeRank($rank) {
 }
 
 function populateDB() {
-  $password = password_hash("admin", PASSWORD_BCRYPT)
+  $password = password_hash("admin", PASSWORD_BCRYPT);
   $db = new PDO('sqlite:database.sqlite');
   $db->query('CREATE TABLE users(id INTEGER PRIMARY KEY, username TEXT, password TEXT, rank INTEGER)');
   $db->query('CREATE TABLE whitelisted(id INTEGER PRIMARY KEY, username TEXT, addedby INTEGER, date TEXT)');
