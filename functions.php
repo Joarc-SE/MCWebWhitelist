@@ -45,7 +45,7 @@ function checkPassword($password) {
   $query = $db->prepare('SELECT * FROM users WHERE username = ?');
   $query->execute();
   $result = $query->fetch();
-  if (password_verify($result['password'], $password)) {
+  if (password_verify($password, $result['password'])) {
     return true;
   } else {
     return false;
